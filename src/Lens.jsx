@@ -9,7 +9,7 @@ export default function Lens({ children, damping = 0.15, ...props }) {
     const viewport = useThree((state) => state.viewport)
     const buffer = useFBO()
     const cursor = useRef()
-    const { nodes } = useGLTF('/lens-transformed.glb')
+    const { nodes } = useGLTF('lens-transformed.glb')
 
     useFrame((state, delta) => {
         // Tie lens to the pointer
