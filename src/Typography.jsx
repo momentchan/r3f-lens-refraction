@@ -4,7 +4,7 @@ import { useThree } from "@react-three/fiber"
 export default function Typography() {
     const state = useThree()
     const { width, height } = state.viewport.getCurrentViewport(state.camera, [0, 0, 12])
-    const shared = { font: '/Inter-Regular.woff', letterSpacing: -0.1, color: 'black' }
+    const shared = { font: 'Inter-Regular.woff', letterSpacing: -0.1, color: 'black' }
 
     return (
         <>
