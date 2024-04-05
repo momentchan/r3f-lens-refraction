@@ -1,4 +1,4 @@
-import { OrbitControls, Preload, Scroll, ScrollControls } from "@react-three/drei";
+import { Preload, Scroll, ScrollControls } from "@react-three/drei";
 import { Canvas } from '@react-three/fiber'
 import Utilities from "./r3f-gist/utility/Utilities";
 import Typography from "./Typography";

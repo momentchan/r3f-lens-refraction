@@ -1,6 +1,17 @@
-import { Image, useScroll } from "@react-three/drei"
+import { Image as ImageImpl, useScroll } from "@react-three/drei"
 import { useFrame, useThree } from "@react-three/fiber"
-import { useRef } from "react"
+import { useRef, useState } from "react"
+import * as THREE from 'three'
+
+function Image({ c = new THREE.Color(), ...props }) {
+    const ref = useRef()
+    const [hovered, hover] = useState(false)
+    useFrame(() => {
+        ref.current.material.color.lerp(c.set(hovered ? 'white' : "#ccc"), hovered ? 0.4 : 0.05)
+    })
+
+    return <ImageImpl ref={ref} onPointerOver={() => hover(true)} onPointerOut={() => hover(false)}{...props} />
+}
 
 export default function Images() {
     const { width, height } = useThree((state) => state.viewport)
